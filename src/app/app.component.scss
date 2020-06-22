@@ -8,25 +8,48 @@ mat-sidenav {
   width: 200px;
 }
 
-.navigation-items {
+.toolbar {
   display: flex;
-  padding: 0;
-  margin: 0;
+  justify-content: space-between;
 
   a {
     text-decoration: none;
-    margin-right: 15px;
   }
 
-  a:last-of-type {
-    margin-right: 0;
+  .navigation-items {
+    display: none;
   }
 
-  a:hover {
-    color: lightgrey;
+  .flex-spacer {
+    display: none;
   }
-}
 
-.flex-spacer {
-  flex-grow: 1;
+  @media screen and (min-width: 600px) {
+    .icon {
+      display: none;
+    }
+
+    .navigation-items {
+      display: flex;
+      padding: 0;
+      margin: 0;
+    }
+
+    a {
+      text-decoration: none;
+      margin-right: 15px;
+    }
+
+    a:last-of-type {
+      margin-right: 0;
+    }
+
+    a:hover {
+      color: lightgrey;
+    }
+
+    .flex-spacer {
+      flex-grow: 1;
+    }
+  }
 }
