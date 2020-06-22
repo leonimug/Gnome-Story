@@ -7,9 +7,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { HomeComponent } from './components/home/home.component';
 import { SearchComponent } from './components/search/search.component';
+import { GnomeComponent } from './components/gnome/gnome.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, SearchComponent],
+  declarations: [AppComponent, HomeComponent, SearchComponent, GnomeComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
