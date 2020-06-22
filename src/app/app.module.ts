@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,11 +12,18 @@ import { GnomeComponent } from './components/gnome/gnome.component';
 import { CardComponent } from './components/card/card.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, SearchComponent, GnomeComponent, CardComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    SearchComponent,
+    GnomeComponent,
+    CardComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     MaterialModule,
   ],
   providers: [],

@@ -9,6 +9,7 @@
   display: flex;
   justify-content: space-between;
   text-align: center;
+  margin-bottom: 20px;
 }
 h2,
 p {
@@ -19,6 +20,10 @@ img {
   width: 80px;
   height: 80px;
   border-radius: 100%;
+}
+
+.mat-icon {
+  margin-right: 8px;
 }
 
 @media screen and (min-width: 600px) {
@@ -43,9 +48,5 @@ img {
   img {
     width: 100px;
     height: 100px;
-  }
-
-  .mat-icon {
-    margin-right: 8px;
   }
 }
