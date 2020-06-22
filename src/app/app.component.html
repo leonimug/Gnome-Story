@@ -3,11 +3,18 @@
     <p>Sidenav content</p>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar color="primary">
+    <mat-toolbar class="toolbar" color="primary">
       <div>
-        <button mat-icon-button>
+        <button (click)="sidenav.toggle()" mat-icon-button>
           <mat-icon>menu</mat-icon>
         </button>
+      </div>
+      <div>
+        <h2>GnomeStory</h2>
+      </div>
+      <div>
+        <a [routerLink]="['/home']">Home</a>
+        <a [routerLink]="['/search']">Search</a>
       </div>
     </mat-toolbar>
 
