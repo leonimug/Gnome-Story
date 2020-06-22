@@ -8,9 +8,10 @@ import { MaterialModule } from './material.module';
 import { HomeComponent } from './components/home/home.component';
 import { SearchComponent } from './components/search/search.component';
 import { GnomeComponent } from './components/gnome/gnome.component';
+import { CardComponent } from './components/card/card.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, SearchComponent, GnomeComponent],
+  declarations: [AppComponent, HomeComponent, SearchComponent, GnomeComponent, CardComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
