@@ -1,0 +1,55 @@
+mat-sidenav-container,
+mat-sidenav-content,
+mat-sidenav {
+  height: 100%;
+}
+
+mat-sidenav {
+  width: 200px;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+a {
+  text-decoration: none;
+}
+
+.navigation-items {
+  display: none;
+}
+
+.flex-spacer {
+  display: none;
+}
+
+@media screen and (min-width: 600px) {
+  .icon {
+    display: none;
+  }
+
+  .navigation-items {
+    display: flex;
+    padding: 0;
+    margin: 0;
+  }
+
+  .navigation-items > a {
+    text-decoration: none;
+    margin-right: 15px;
+  }
+
+  a:last-of-type {
+    margin-right: 0;
+  }
+
+  a:hover {
+    color: lightgrey;
+  }
+
+  .flex-spacer {
+    flex-grow: 1;
+  }
+}
