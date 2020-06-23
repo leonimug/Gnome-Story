@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { IGnome } from 'src/app/shared/gnome.model';
 
 @Component({
   selector: 'app-card',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./card.component.css'],
 })
 export class CardComponent implements OnInit {
+  @Input() gnomes: any[];
   constructor() {}
 
   ngOnInit(): void {}
