@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
         this.gnomes.push(data.Brastlewark[i]);
       }
 
-      console.log(this.gnomes);
+      console.log(this.gnomes[0].name);
     });
   }
 }

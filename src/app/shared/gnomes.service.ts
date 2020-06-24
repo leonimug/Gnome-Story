@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
 import { Observable, of } from 'rxjs';
 import { IGnome } from './gnome.model';
@@ -8,13 +8,14 @@ import { IGnome } from './gnome.model';
   providedIn: 'root',
 })
 export class GnomesService {
+  private gnomesUrl =
+    'https://raw.githubusercontent.com/rrafols/mobile_test/master/data.json';
+
   constructor(private httpClient: HttpClient) {}
 
   getGnomes(): Observable<IGnome[]> {
     return this.httpClient
-      .get<IGnome[]>(
-        'https://raw.githubusercontent.com/rrafols/mobile_test/master/data.json'
-      )
+      .get<IGnome[]>(this.gnomesUrl)
       .pipe(catchError(this.handleError<IGnome[]>('getGnomes', [])));
   }
 
