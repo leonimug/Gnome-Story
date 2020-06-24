@@ -8,16 +8,17 @@ import { IGnome } from 'src/app/shared/gnome.model';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  gnomes: any[] = [];
+  gnomes: IGnome[];
   constructor(private gnomesService: GnomesService) {}
 
   ngOnInit() {
-    this.gnomesService.getGnomes().subscribe((data: any) => {
-      for (let i = 0; i < data.Brastlewark.length; i++) {
-        this.gnomes.push(data.Brastlewark[i]);
-      }
+    this.getGnomes();
+  }
 
-      console.log(this.gnomes[0].name);
-    });
+  getGnomes(): void {
+    this.gnomesService
+      .getGnomes()
+      .subscribe((gnomes) => (this.gnomes = gnomes));
+    console.log(this.gnomes);
   }
 }

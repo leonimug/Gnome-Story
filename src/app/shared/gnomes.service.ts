@@ -19,6 +19,13 @@ export class GnomesService {
       .pipe(catchError(this.handleError<IGnome[]>('getGnomes', [])));
   }
 
+  getGnome(id: number): Observable<IGnome> {
+    const url = `${this.gnomesUrl} /${id}`;
+    return this.httpClient
+      .get<IGnome>(url)
+      .pipe(catchError(this.handleError<IGnome>(`getGnome id=${id}`)));
+  }
+
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       console.error(error);
