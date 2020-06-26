@@ -9,7 +9,7 @@
   <mat-card-content>
     <h2>{{ friendlyGnome.name }}</h2>
     <p>Age: {{ friendlyGnome.age }}</p>
-    <mat-icon matBadge="4" matBadgeColor="primary"
+    <mat-icon *ngIf="friends" [matBadge]="friends" matBadgeColor="primary"
       >sentiment_satisfied_alt</mat-icon
     >
     <mat-icon>sentiment_very_dissatisfied</mat-icon>

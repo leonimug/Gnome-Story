@@ -8,7 +8,11 @@ import { IGnome } from 'src/app/shared/gnome.model';
 })
 export class CardComponent implements OnInit {
   @Input() friendlyGnome;
+  friends: number;
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.friends = this.friendlyGnome.friends.length;
+    console.log(this.friends);
+  }
 }

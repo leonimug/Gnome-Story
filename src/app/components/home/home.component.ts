@@ -18,9 +18,9 @@ export class HomeComponent implements OnInit {
   getGnomes() {
     this.gnomesService.getGnomes().subscribe(
       (data: IGnome[]) =>
-        (this.friendlyGnomes = data.filter(
-          (gnomes) => gnomes.friends.length > 3
-        )),
+        (this.friendlyGnomes = data
+          .filter((gnomes) => gnomes.friends.length > 3)
+          .slice(0, 12)),
       (err: any) => console.log(err),
       () => console.log('All done')
     );

@@ -1,6 +1,7 @@
 .conteiner {
   width: 90%;
   margin: 0 auto;
+  text-align: left;
 }
 .title {
   font-size: 30px;
@@ -9,7 +10,14 @@
   margin-bottom: 10px;
 }
 
+p {
+  margin-bottom: 30px;
+}
+
 @media screen and (min-width: 600px) {
+  .conteiner {
+    text-align: center;
+  }
   .cards {
     display: flex;
     flex-wrap: wrap;
