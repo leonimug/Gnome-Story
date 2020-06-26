@@ -8,7 +8,7 @@ import { IGnome } from 'src/app/shared/gnome.model';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  gnomes: IGnome[];
+  friendlyGnomes: IGnome[];
   constructor(public gnomesService: GnomesService) {}
 
   ngOnInit() {
@@ -17,7 +17,10 @@ export class HomeComponent implements OnInit {
 
   getGnomes() {
     this.gnomesService.getGnomes().subscribe(
-      (data: IGnome[]) => (this.gnomes = data.slice(0, 4)),
+      (data: IGnome[]) =>
+        (this.friendlyGnomes = data.filter(
+          (gnomes) => gnomes.friends.length > 3
+        )),
       (err: any) => console.log(err),
       () => console.log('All done')
     );

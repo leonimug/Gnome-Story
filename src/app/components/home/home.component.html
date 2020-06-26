@@ -2,6 +2,9 @@
   <h1 class="title">Brastlewark</h1>
 
   <section class="cards">
-    <app-card [gnome]="gnome" *ngFor="let gnome of gnomes"></app-card>
+    <app-card
+      [friendlyGnome]="friendlyGnome"
+      *ngFor="let friendlyGnome of friendlyGnomes"
+    ></app-card>
   </section>
 </div>

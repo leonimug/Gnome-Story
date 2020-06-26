@@ -7,7 +7,7 @@ import { IGnome } from 'src/app/shared/gnome.model';
   styleUrls: ['./card.component.css'],
 })
 export class CardComponent implements OnInit {
-  @Input() gnome;
+  @Input() friendlyGnome;
   constructor() {}
 
   ngOnInit(): void {}
