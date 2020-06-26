@@ -9,16 +9,17 @@ import { IGnome } from 'src/app/shared/gnome.model';
 })
 export class HomeComponent implements OnInit {
   gnomes: IGnome[];
-  constructor(private gnomesService: GnomesService) {}
+  constructor(public gnomesService: GnomesService) {}
 
   ngOnInit() {
     this.getGnomes();
   }
 
-  getGnomes(): void {
-    this.gnomesService
-      .getGnomes()
-      .subscribe((gnomes) => (this.gnomes = gnomes));
-    console.log(this.gnomes);
+  getGnomes() {
+    this.gnomesService.getGnomes().subscribe(
+      (data: IGnome[]) => (this.gnomes = data.slice(0, 4)),
+      (err: any) => console.log(err),
+      () => console.log('All done')
+    );
   }
 }

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { catchError } from 'rxjs/operators';
+import { catchError, map } from 'rxjs/operators';
 import { Observable, of } from 'rxjs';
 import { IGnome } from './gnome.model';
 
@@ -16,7 +16,7 @@ export class GnomesService {
   getGnomes(): Observable<IGnome[]> {
     return this.httpClient
       .get<IGnome[]>(this.gnomesUrl)
-      .pipe(catchError(this.handleError<IGnome[]>('getGnomes', [])));
+      .pipe(map((response: any) => response.Brastlewark));
   }
 
   getGnome(id: number): Observable<IGnome> {
