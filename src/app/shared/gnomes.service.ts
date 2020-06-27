@@ -19,7 +19,7 @@ export class GnomesService {
       .pipe(map((response: any) => response.Brastlewark));
   }
 
-  getGnome(id: number): Observable<IGnome> {
+  getGnomeById(id: number): Observable<IGnome> {
     const url = `${this.gnomesUrl} /${id}`;
     return this.httpClient
       .get<IGnome>(url)

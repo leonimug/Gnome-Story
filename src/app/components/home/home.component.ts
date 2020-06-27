@@ -9,13 +9,14 @@ import { IGnome } from 'src/app/shared/gnome.model';
 })
 export class HomeComponent implements OnInit {
   friendlyGnomes: IGnome[];
+  gnomeID: number;
   constructor(public gnomesService: GnomesService) {}
 
   ngOnInit() {
-    this.getGnomes();
+    this.getFriendlyGnomes();
   }
 
-  getGnomes() {
+  getFriendlyGnomes() {
     this.gnomesService.getGnomes().subscribe(
       (data: IGnome[]) =>
         (this.friendlyGnomes = data
