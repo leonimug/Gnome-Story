@@ -8,10 +8,18 @@
   </mat-card-header>
   <mat-card-content>
     <h2>{{ friendlyGnome.name }}</h2>
-    <p>Age: {{ friendlyGnome.age }}</p>
-    <mat-icon *ngIf="friends" [matBadge]="friends" matBadgeColor="primary"
-      >sentiment_satisfied_alt</mat-icon
-    >
-    <mat-icon>sentiment_very_dissatisfied</mat-icon>
+    <p>
+      Age: <span>{{ friendlyGnome.age }}</span>
+    </p>
+    <div class="icons">
+      <button mat-icon-button>
+        <mat-icon [matBadge]="friends" matBadgeColor="primary"
+          >sentiment_satisfied_alt</mat-icon
+        >
+      </button>
+      <button mat-icon-button>
+        <mat-icon [matBadge]="professions">work_outline</mat-icon>
+      </button>
+    </div>
   </mat-card-content>
 </mat-card>
