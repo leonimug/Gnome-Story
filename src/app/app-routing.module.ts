@@ -7,7 +7,7 @@ import { GnomeComponent } from './components/gnome/gnome.component';
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'search', component: SearchComponent },
-  { path: 'gnome/id', component: GnomeComponent },
+  { path: 'gnome/:id', component: GnomeComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
 ];
 
